@@ -3,7 +3,8 @@ Overview
 This is a demo shop using
 - postgres
 - react
-- graphql
+- graphql via postgraphile
+- apollo
 
 functions:
 - list products (title, description, price, image)
@@ -13,6 +14,13 @@ functions:
 - place order (email and full products as json)
 - responsive via flexbox
 
+data:
+- table app_public.product
+- table app_public.order
+
+system:
+- npm >6.8
+- postgres > 9.6 
 
 Setup
 =====
@@ -20,16 +28,16 @@ Setup
 2. create database, tables, test data
 3. install and start postgraphile
 
-1. Clone Code
-=============
+Step 1 - Clone Code
+===================
 git clone https://github.com/byteone0/graphql-shop-demo.git
 cd graphql-shop-demo.git
 npm i
 npm start
 -> http://localhost:3000/  
 
-2. Database
-===========
+Step 2 - Database
+=================
 as user postgres (or whatever your db admin user is):
  
    psql < create_user_and_database.sql
@@ -38,8 +46,8 @@ as normal user (no specific account):
 
    psql "postgres://graphshop:graphshop@127.0.0.1:5432/graphshop" < data.sql
 
-3. Postgraphile
-===============
+Step 3 - Postgraphile
+=====================
 
 install
 -------
@@ -57,4 +65,5 @@ The interactive IDE can be found under:
 CLEAN UP
 ========
 drobdb graphshop
-
+dropuser graphshop
+npm uninstall -g postgraphile
