@@ -31,10 +31,14 @@ Setup
 Step 1 - Clone Code
 ===================
 git clone https://github.com/byteone0/graphql-shop-demo.git
+
 cd graphql-shop-demo.git
+
 npm i
+
 npm start
--> http://localhost:3000/  
+
+	http://localhost:3000/  
 
 Step 2 - Database
 =================
